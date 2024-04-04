@@ -1,0 +1,33 @@
+.categories {
+  background-color: #f0eef7;
+  padding-bottom: 36px;
+
+  &__item {
+    width: 100%;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: $whiteColor;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 100%;
+    height: 180px;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+
+  &__title {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    max-height: 2.1rem;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 18px;
+    margin-bottom: 0;
+    color: $textColor;
+    font-weight: 500;
+  }
+}

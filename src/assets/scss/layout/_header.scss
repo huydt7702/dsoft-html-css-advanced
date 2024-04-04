@@ -1,0 +1,250 @@
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  background: url("@/assets/images/slider1.png") no-repeat top / cover;
+  height: 460px;
+  color: $whiteColor;
+
+  &__logo {
+    width: 120px;
+  }
+
+  &__group-search {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+
+  &__logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  &__categories {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    border: none;
+    color: $whiteColor;
+    margin-right: 14px;
+  }
+
+  &__search {
+    position: relative;
+    width: 100%;
+  }
+
+  &__search-input {
+    padding: 12px 30px 12px 8px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: $whiteColor;
+    width: 100%;
+
+    &::placeholder {
+      color: $whiteColor;
+    }
+  }
+
+  &__search-icon {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    color: $whiteColor;
+  }
+
+  &__group-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__register-btn,
+  &__get-started-btn {
+    background-color: $buttonPrimaryColor;
+    border: none;
+    border-radius: 3px;
+    color: $whiteColor;
+    font-weight: 600;
+    padding: 12px;
+    transition: opacity ease-in-out 0.2s;
+  }
+
+  &__register-btn:hover,
+  &__get-started-btn:hover {
+    opacity: 0.9;
+  }
+
+  &__bars-btn {
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: #333;
+    border: none;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    transition: background-color ease-in-out 0.2s;
+    display: none;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  &__group {
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  &__heading {
+    font-size: 3.6rem;
+    margin: 34px 0;
+  }
+
+  &__desc {
+    margin: 16px 0;
+    font-size: 1.5rem;
+  }
+}
+
+.sub-header {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  right: 0;
+  z-index: 80;
+  background: unset;
+  height: fit-content;
+  background-color: $whiteColor;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  transition: top ease-in-out 0.5s;
+
+  .header__search {
+    border: 1px solid #ccc;
+    background-color: transparent;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px #eee;
+  }
+
+  .header__search-input {
+    color: #333;
+    padding: 11px 30px 11px 8px;
+
+    &::placeholder {
+      color: #ccc;
+    }
+  }
+
+  .header__nav-list,
+  .header__nav-item a,
+  .header__categories,
+  .header__search-icon {
+    color: #333;
+  }
+
+  .header__bars-btn {
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .header__register-btn:hover,
+  .header__get-started-btn:hover {
+    opacity: 0.8;
+    transition: opacity ease-in-out 0.2s;
+  }
+}
+
+.header__nav {
+  height: 114px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 32px 0;
+  width: 100%;
+
+  &-list {
+    display: flex;
+    gap: 28px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  &-item a {
+    color: $whiteColor;
+    text-decoration: none;
+  }
+}
+
+.header__info {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: max-content;
+  gap: 40px;
+  background-color: $whiteColor;
+  color: #2f3d62;
+  border-radius: 2px;
+  padding: 16px 22px;
+  box-shadow: 1px 1px 22px rgba(0, 0, 0, 0.2);
+
+  &-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 100%;
+    border: 1px solid #2f3d62;
+    color: $whiteColor;
+  }
+
+  &-icon--active {
+    border: 1px solid $buttonPrimaryColor;
+  }
+
+  &-icon i {
+    background-color: #2f3d62;
+    border-radius: 100%;
+    padding: 8px;
+  }
+
+  &-icon--active i {
+    background-color: $buttonPrimaryColor;
+  }
+
+  &-title {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,34 @@
+.content {
+  margin-top: 90px;
+
+  &__title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 46px 0;
+  }
+
+  &__title {
+    color: #2f3d62;
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin: 0;
+    max-width: 66%;
+  }
+
+  &__title-group-btn {
+    flex-shrink: 0;
+    background-color: $buttonPrimaryColor;
+    border: none;
+    border-radius: 3px;
+    color: $whiteColor;
+    font-weight: 500;
+    padding: 12px 14px;
+  }
+
+  &__title-group-btn:hover {
+    opacity: 0.8;
+    transition: opacity ease-in-out 0.2s;
+  }
+}

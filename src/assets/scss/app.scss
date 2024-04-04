@@ -1,0 +1,16 @@
+@import './abstracts/variables';
+@import './abstracts/mixin';
+@import './base/base';
+
+@import './layout/header';
+@import './layout/sidebar';
+@import './layout/content';
+@import './layout/footer';
+
+@import './components/categories';
+@import './components/courses';
+@import './components/feedback';
+@import './components/platform';
+@import './components/online-coaching';
+
+@import './base/responsive';
