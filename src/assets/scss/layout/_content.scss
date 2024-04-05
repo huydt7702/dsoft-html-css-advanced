@@ -2,10 +2,8 @@
   margin-top: 90px;
 
   &__title-group {
-    display: flex;
-    align-items: center;
+    @include flexSpaceBetween;
     gap: 10px;
-    justify-content: space-between;
     padding: 46px 0;
   }
 

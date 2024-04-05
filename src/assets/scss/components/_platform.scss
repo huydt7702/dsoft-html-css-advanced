@@ -1,8 +1,7 @@
 .platform {
   &__content {
-    display: flex;
+    @include flexItemsCenter;
     gap: 240px;
-    align-items: center;
   }
 
   &__left {
@@ -28,7 +27,7 @@
   }
 
   &__item-desc {
-    margin: 20px 80px 40px 20px;
+    margin: 20px 42px 40px 20px;
     text-align: justify;
   }
 

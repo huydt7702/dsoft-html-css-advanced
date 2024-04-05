@@ -11,9 +11,7 @@
   transition: transform ease-in-out 0.3s;
 
   &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flexSpaceBetween;
     border-bottom: 1px solid #eee;
     padding: 20px;
   }
@@ -28,9 +26,7 @@
   }
 
   &__close-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenter;
     width: 40px;
     height: 40px;
     border-radius: 100%;
@@ -44,8 +40,7 @@
   }
 
   &__item {
-    display: flex;
-    align-items: center;
+    @include flexItemsCenter;
     gap: 10px;
     color: $textColor;
     padding: 12px 20px;

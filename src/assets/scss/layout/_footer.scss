@@ -25,9 +25,7 @@
   }
 
   &__license {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flexSpaceBetween;
     gap: 20px;
     border-top: 1px solid #444;
     padding: 18px 0;
@@ -41,21 +39,18 @@
   }
 
   &__social {
-    display: flex;
-    align-items: center;
+    @include flexItemsCenter;
     gap: 20px;
   }
 
   &__social-item {
-    display: flex;
-    align-items: center;
+    @include flexItemsCenter;
     padding: 8px;
     font-size: 1.8rem;
   }
 
   &__social-item a {
-    display: flex;
-    align-items: center;
+    @include flexItemsCenter;
     color: #ccc;
     text-decoration: none;
   }

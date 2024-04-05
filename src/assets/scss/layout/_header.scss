@@ -1,9 +1,8 @@
 .header {
+  @include flexItemsCenter;
   position: relative;
-  display: flex;
   flex-direction: column;
   gap: 40px;
-  align-items: center;
   background: url("@/assets/images/slider1.png") no-repeat top / cover;
   height: 460px;
   color: $whiteColor;
@@ -13,20 +12,17 @@
   }
 
   &__group-search {
-    display: flex;
-    align-items: center;
+    @include flexItemsCenter;
     flex: 1;
   }
 
   &__logo-link {
-    display: flex;
-    align-items: center;
+    @include flexItemsCenter;
     text-decoration: none;
   }
 
   &__categories {
-    display: flex;
-    align-items: center;
+    @include flexItemsCenter;
     gap: 8px;
     background-color: transparent;
     border: none;
@@ -52,24 +48,19 @@
   }
 
   &__search-icon {
-    position: absolute;
-    top: 50%;
+    @include itemCenterY;
+    @include flexItemsCenter;
     right: 4px;
-    transform: translateY(-50%);
     background-color: transparent;
     border: none;
-    display: flex;
-    align-items: center;
     color: $whiteColor;
   }
 
   &__group-btn {
-    display: flex;
-    align-items: center;
+    @include flexItemsCenter;
     gap: 10px;
   }
 
-  &__register-btn,
   &__get-started-btn {
     background-color: $buttonPrimaryColor;
     border: none;
@@ -78,11 +69,14 @@
     font-weight: 600;
     padding: 12px;
     transition: opacity ease-in-out 0.2s;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 
-  &__register-btn:hover,
-  &__get-started-btn:hover {
-    opacity: 0.9;
+  &__register-btn {
+    @extend .header__get-started-btn;
   }
 
   &__bars-btn {
@@ -169,10 +163,8 @@
 }
 
 .header__nav {
+  @include flexSpaceBetween;
   height: 114px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 10px;
   padding: 32px 0;
   width: 100%;
@@ -185,8 +177,7 @@
   }
 
   &-item {
-    display: flex;
-    align-items: center;
+    @include flexItemsCenter;
     gap: 8px;
     cursor: pointer;
   }
@@ -198,13 +189,9 @@
 }
 
 .header__info {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  @include itemCenterX;
+  @include flexSpaceBetween;
   bottom: -40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: max-content;
   gap: 40px;
   background-color: $whiteColor;
@@ -214,15 +201,12 @@
   box-shadow: 1px 1px 22px rgba(0, 0, 0, 0.2);
 
   &-group {
-    display: flex;
-    align-items: center;
+    @include flexItemsCenter;
     gap: 10px;
   }
 
   &-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenter;
     width: 46px;
     height: 46px;
     border-radius: 100%;

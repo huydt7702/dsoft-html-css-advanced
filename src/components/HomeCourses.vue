@@ -23,7 +23,7 @@
         <div class="courses__progress">
           <div
             class="courses__progress-item js-progress"
-            style="width: 25%"
+            style="width: 33.33333%"
           ></div>
         </div>
         <button class="courses__progress-btn js-next-progress-btn">

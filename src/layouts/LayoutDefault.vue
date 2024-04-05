@@ -1,4 +1,5 @@
 <template>
+  <BaseHeader isSubHeader />
   <BaseHeader />
   <BaseSidebar />
   <div class="content">

@@ -19,11 +19,8 @@
   }
 
   &__title {
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+    @include lineClamp(1);
     max-height: 2.1rem;
-    overflow: hidden;
     text-align: center;
     margin-top: 18px;
     margin-bottom: 0;

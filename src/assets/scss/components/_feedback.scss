@@ -7,21 +7,18 @@
   }
 
   &__group-btn {
-    display: flex;
-    align-items: center;
+    @include flexItemsCenter;
     gap: 14px;
   }
 
-  &__arrow-left,
   &__arrow-right {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenter;
     background-color: $whiteColor;
     border: none;
     width: 36px;
     height: 36px;
     border-radius: 3px;
+    color: #fd8a00;
 
     &:hover {
       opacity: 0.9;
@@ -30,16 +27,12 @@
   }
 
   &__arrow-left {
+    @extend .feedback__arrow-right;
     color: #2f3d62;
   }
 
-  &__arrow-right {
-    color: #fd8a00;
-  }
-
   &__content {
-    display: flex;
-    align-items: center;
+    @include flexItemsCenter;
     gap: 60px;
   }
 
@@ -56,13 +49,8 @@
 
   &__play-btn,
   &__pause-btn {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include flexCenter;
+    @include itemCenter;
     background-color: $whiteColor;
     border: none;
     width: 60px;

@@ -1,10 +1,9 @@
 .online-coaching {
+  @include flexItemsCenter;
   position: relative;
   background-color: #fdf0ef;
   padding: 126px 24px;
-  display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
 
   &__heading {
@@ -34,8 +33,7 @@
     position: absolute;
     width: 54px;
     height: 54px;
-    border-radius: 100%;
-    object-fit: cover;
+    @include roundedAvatar;
   }
 
   &__avatar--avatar1 {
@@ -71,7 +69,6 @@
   }
 
   &__circle {
-    position: absolute;
     width: 48px;
     height: 48px;
     border-radius: 100%;
@@ -79,14 +76,12 @@
   }
 
   &__circle--circle1 {
-    top: 50%;
-    transform: translateY(-50%);
+    @include itemCenterY;
     left: 170px;
   }
 
   &__circle--circle2 {
-    top: 50%;
-    transform: translateY(-50%);
+    @include itemCenterY;
     right: 170px;
   }
 }

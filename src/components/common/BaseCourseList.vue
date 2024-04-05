@@ -3,7 +3,7 @@
     <div
       v-for="course in courses"
       :key="course.id"
-      class="col-lg-4 col-md-6 col-sm-12"
+      class="col-lg-4 col-md-6 col-sm-6"
     >
       <BaseCourseItem :course="course" />
     </div>

@@ -13,21 +13,6 @@
     }
   }
 
-  .courses {
-    &__wrap-progress {
-      display: none;
-    }
-
-    &__slide-wrapper {
-      overflow: unset;
-    }
-
-    &__slide-row {
-      transform: translateX(0) !important;
-      flex-wrap: wrap;
-    }
-  }
-
   .feedback {
     &__detail {
       margin-right: 0;
@@ -81,6 +66,12 @@
   .courses {
     &__img {
       height: 320px;
+    }
+
+    &__reaction {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
   }
 
@@ -153,11 +144,6 @@
 
     &__title {
       font-size: 2rem;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 1;
-      max-height: 28.8px;
-      overflow: hidden;
     }
   }
 
