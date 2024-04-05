@@ -53,22 +53,7 @@
         <a href="#" class="header__logo-link">
           <img class="header__logo" src="@/assets/images/logo.png" alt="Logo" />
         </a>
-        <div class="header__group-search">
-          <button class="header__categories">
-            <i class="ti-list"></i>
-            Categories
-          </button>
-          <div class="header__search">
-            <input
-              class="header__search-input"
-              type="text"
-              placeholder="What do you want learn ?"
-            />
-            <button class="header__search-icon">
-              <i class="ti-search"></i>
-            </button>
-          </div>
-        </div>
+        <BaseSearchForm />
         <ul class="header__nav-list">
           <li class="header__nav-item">
             Home
@@ -124,3 +109,13 @@
     </div>
   </header>
 </template>
+
+<script>
+import BaseSearchForm from "@/components/common/BaseSearchForm.vue";
+
+export default {
+  components: {
+    BaseSearchForm,
+  },
+};
+</script>
