@@ -1,5 +1,9 @@
 <template>
-  <header class="header" :class="isSubHeader ? 'sub-header' : ''">
+  <header
+    class="header"
+    :class="isSubHeader && 'sub-header'"
+    :style="{ top: isSubHeader && positionOfHeader }"
+  >
     <div class="container">
       <nav class="header__nav">
         <a href="#" class="header__logo-link">
@@ -25,7 +29,7 @@
         </ul>
         <div class="header__group-btn">
           <button class="header__register-btn">Register</button>
-          <button class="header__bars-btn js-sidebar-bars-btn">
+          <button class="header__bars-btn" @click="handleShowSidebar">
             <i class="ti-menu"></i>
           </button>
         </div>
@@ -63,16 +67,39 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import BaseSearchForm from "@/components/common/BaseSearchForm.vue";
+
+const SCROLL_THRESHOLD = 600;
 
 export default {
   props: {
     isSubHeader: {
       type: Boolean,
     },
+    isShowSidebar: {
+      type: Boolean,
+    },
   },
   components: {
     BaseSearchForm,
+  },
+  setup(props, { emit }) {
+    const positionOfHeader = ref("-100%");
+    function handleShowSubHeader() {
+      if (window.scrollY >= SCROLL_THRESHOLD) {
+        positionOfHeader.value = "0";
+      } else {
+        positionOfHeader.value = "-100%";
+      }
+    }
+    document.addEventListener("scroll", handleShowSubHeader);
+
+    const handleShowSidebar = () => {
+      emit("onShowSidebar", true);
+    };
+
+    return { handleShowSidebar, positionOfHeader };
   },
 };
 </script>

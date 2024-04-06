@@ -67,10 +67,13 @@
   }
 
   &__reaction-icon {
+    position: relative;
+    top: -1px;
     font-size: 16px;
   }
 
   &__reaction-icon--star {
+    top: -2px;
     color: #f3b33c;
   }
 
