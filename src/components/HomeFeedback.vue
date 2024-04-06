@@ -17,13 +17,23 @@
       <div class="feedback__content">
         <div class="feedback__video">
           <video
-            class="feedback__video-play js-feedback-video"
+            class="feedback__video-play"
             src="@/assets/videos/videomtp.mp4"
+            ref="videoEl"
+            @click="handleToggleVideo"
           ></video>
-          <button class="feedback__play-btn js-feedback-play-video-btn">
+          <button
+            v-if="!isPlayVideo"
+            class="feedback__play-btn"
+            @click="handleToggleVideo"
+          >
             <i class="ti-control-play feedback__play-icon"></i>
           </button>
-          <button class="feedback__pause-btn js-feedback-pause-video-btn">
+          <button
+            v-if="isPlayVideo"
+            class="feedback__pause-btn"
+            @click="handleToggleVideo"
+          >
             <i class="ti-control-pause feedback__pause-icon"></i>
           </button>
         </div>
@@ -39,3 +49,30 @@
     </div>
   </div>
 </template>
+
+<script>
+import { ref } from "vue";
+
+export default {
+  setup() {
+    const videoEl = ref(null);
+    const isPlayVideo = ref(false);
+
+    const handleToggleVideo = () => {
+      if (isPlayVideo.value) {
+        videoEl.value.pause();
+        isPlayVideo.value = false;
+      } else {
+        videoEl.value.play();
+        isPlayVideo.value = true;
+      }
+    };
+
+    return {
+      videoEl,
+      isPlayVideo,
+      handleToggleVideo,
+    };
+  },
+};
+</script>

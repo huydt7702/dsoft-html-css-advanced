@@ -47,8 +47,7 @@
     object-fit: cover;
   }
 
-  &__play-btn,
-  &__pause-btn {
+  &__play-btn {
     @include flexCenter;
     @include itemCenter;
     background-color: $whiteColor;
@@ -63,18 +62,18 @@
     }
   }
 
-  &__pause-btn {
-    display: none;
-  }
-
-  &__pause-icon,
-  &__play-icon {
+  &__pause-icon {
     position: relative;
     color: $buttonPrimaryColor;
     font-size: 2.4rem;
   }
 
+  &__pause-btn {
+    @extend .feedback__play-btn;
+  }
+
   &__play-icon {
+    @extend .feedback__pause-icon;
     left: 2px;
   }
 
