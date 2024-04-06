@@ -62,18 +62,18 @@
     }
   }
 
-  &__pause-icon {
-    position: relative;
-    color: $buttonPrimaryColor;
-    font-size: 2.4rem;
-  }
-
   &__pause-btn {
     @extend .feedback__play-btn;
   }
 
   &__play-icon {
-    @extend .feedback__pause-icon;
+    position: relative;
+    color: $buttonPrimaryColor;
+    font-size: 2.4rem;
+  }
+
+  &__pause-icon {
+    @extend .feedback__play-icon;
     left: 2px;
   }
 

@@ -19,22 +19,22 @@
           <video
             class="feedback__video-play"
             src="@/assets/videos/videomtp.mp4"
-            ref="videoEl"
+            ref="videoRef"
             @click="handleToggleVideo"
           ></video>
           <button
-            v-if="!isPlayVideo"
+            ref="playVideoBtnRef"
             class="feedback__play-btn"
             @click="handleToggleVideo"
           >
-            <i class="ti-control-play feedback__play-icon"></i>
+            <i class="ti-control-pause feedback__play-icon"></i>
           </button>
           <button
-            v-if="isPlayVideo"
+            ref="pauseVideoBtnRef"
             class="feedback__pause-btn"
             @click="handleToggleVideo"
           >
-            <i class="ti-control-pause feedback__pause-icon"></i>
+            <i class="ti-control-play feedback__pause-icon"></i>
           </button>
         </div>
         <div class="feedback__desc">
@@ -52,25 +52,49 @@
 
 <script>
 import { ref } from "vue";
+import { MILLISECONDS_PER_SECOND } from "@/constants";
 
 export default {
   setup() {
-    const videoEl = ref(null);
+    const videoRef = ref(null);
     const isPlayVideo = ref(false);
+    const playVideoBtnRef = ref(null);
+    const pauseVideoBtnRef = ref(null);
 
-    const handleToggleVideo = () => {
-      if (isPlayVideo.value) {
-        videoEl.value.pause();
-        isPlayVideo.value = false;
-      } else {
-        videoEl.value.play();
-        isPlayVideo.value = true;
+    const toggleVideoDisplay = (playBtnDisplay, pauseBtnDisplay) => {
+      if (playVideoBtnRef.value && pauseVideoBtnRef.value) {
+        playVideoBtnRef.value.style.display = playBtnDisplay;
+        pauseVideoBtnRef.value.style.display = pauseBtnDisplay;
       }
     };
 
+    const hiddenPlayVideoButton = () => {
+      if (!playVideoBtnRef.value) return;
+      setTimeout(() => {
+        playVideoBtnRef.value.style.display = "none";
+      }, MILLISECONDS_PER_SECOND);
+    };
+
+    const handleToggleVideo = () => {
+      const video = videoRef.value;
+      if (!video) return;
+
+      if (isPlayVideo.value) {
+        video.pause();
+        toggleVideoDisplay("none", "flex");
+      } else {
+        video.play();
+        toggleVideoDisplay("flex", "none");
+        hiddenPlayVideoButton();
+      }
+
+      isPlayVideo.value = !isPlayVideo.value;
+    };
+
     return {
-      videoEl,
-      isPlayVideo,
+      videoRef,
+      playVideoBtnRef,
+      pauseVideoBtnRef,
       handleToggleVideo,
     };
   },
