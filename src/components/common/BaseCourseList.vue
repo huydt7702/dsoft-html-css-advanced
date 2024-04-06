@@ -11,14 +11,14 @@
 </template>
 
 <script>
-import COURSES from "@/data/courses";
 import BaseCourseItem from "@/components/common/BaseCourseItem.vue";
 
 export default {
-  data() {
-    return {
-      courses: COURSES,
-    };
+  props: {
+    courses: {
+      type: Array,
+      required: true,
+    },
   },
   components: {
     BaseCourseItem,

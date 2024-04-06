@@ -14,7 +14,10 @@
         </div>
       </div>
 
-      <BaseCourseList ref="slideWrapperRef" />
+      <BaseCourseList
+        ref="slideWrapperRef"
+        :courses="isShowSlide ? LARGEST_SELECTION_OF_COURSES : COURSES"
+      />
 
       <div v-if="isShowSlide" class="courses__wrap-progress">
         <button
@@ -44,7 +47,9 @@
 
 <script>
 import { onMounted, ref } from "vue";
+
 import BaseCourseList from "@/components/common/BaseCourseList.vue";
+import { COURSES, LARGEST_SELECTION_OF_COURSES } from "@/data/courses";
 
 export default {
   props: {
@@ -127,6 +132,8 @@ export default {
       slideWrapperRef,
       handleThumbDrag,
       handleNextOrPrevSlider,
+      COURSES,
+      LARGEST_SELECTION_OF_COURSES,
     };
   },
 };
