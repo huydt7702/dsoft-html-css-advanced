@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row courses__slider-wrapper">
     <div
       v-for="course in courses"
       :key="course.id"
