@@ -30,3 +30,23 @@
     transition: opacity ease-in-out 0.2s;
   }
 }
+
+.btnGoToTop {
+  @include flexCenter;
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  z-index: 500;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  background-image: linear-gradient(to right, #ff7eb9, #ffcc00);
+  transition: opacity ease-in-out 0.5s;
+  opacity: 0;
+  pointer-events: none;
+
+  &:hover {
+    opacity: 0.8 !important;
+  }
+}

@@ -67,10 +67,9 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import BaseSearchForm from "@/components/common/BaseSearchForm.vue";
-
-const SCROLL_THRESHOLD = 600;
+import { SCROLL_THRESHOLD } from "@/constants";
 
 export default {
   props: {
@@ -84,7 +83,7 @@ export default {
   components: {
     BaseSearchForm,
   },
-  setup(props, { emit }) {
+  setup(_, { emit }) {
     const positionOfHeader = ref("-100%");
     function handleShowSubHeader() {
       if (window.scrollY >= SCROLL_THRESHOLD) {
@@ -93,7 +92,10 @@ export default {
         positionOfHeader.value = "-100%";
       }
     }
-    document.addEventListener("scroll", handleShowSubHeader);
+
+    onMounted(() => {
+      document.addEventListener("scroll", handleShowSubHeader);
+    });
 
     const handleShowSidebar = () => {
       emit("onShowSidebar", true);
