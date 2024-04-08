@@ -1,4 +1,4 @@
-@media (max-width: 991.98px) {
+@media (max-width: $breakpoint-lg) {
   .header {
     &__nav-list {
       display: none;
@@ -49,7 +49,7 @@
 }
 
 // Tablet
-@media (max-width: 767.98px) {
+@media (max-width: $breakpoint-md) {
   .header {
     &__info {
       display: none;
@@ -84,7 +84,7 @@
 }
 
 // Mobile
-@media (max-width: 575.98px) {
+@media (max-width: $breakpoint-sm) {
   .sub-header {
     display: none;
   }
