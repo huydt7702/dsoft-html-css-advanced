@@ -45,3 +45,19 @@
   -webkit-line-clamp: $line;
   overflow: hidden;
 }
+
+@mixin Responsive($breakpoint) {
+  @if $breakpoint == $breakpoint-lg {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == $breakpoint-md {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == $breakpoint-sm {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@media (max-width: $breakpoint-lg) {
+@include Responsive($breakpoint-lg) {
   .header {
     &__nav-list {
       display: none;
@@ -49,7 +49,7 @@
 }
 
 // Tablet
-@media (max-width: $breakpoint-md) {
+@include Responsive($breakpoint-md) {
   .header {
     &__info {
       display: none;
@@ -84,7 +84,7 @@
 }
 
 // Mobile
-@media (max-width: $breakpoint-sm) {
+@include Responsive($breakpoint-sm) {
   .sub-header {
     display: none;
   }
