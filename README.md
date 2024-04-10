@@ -7,7 +7,7 @@
 1. Website được viết bằng VueJS
 2. Website có dùng Javascipt để thực hiện các logic cơ bản (prev/next/scroll slider, tắt/mở sidebar, play/pause video)
 3. Website sử dụng chuẩn BEM để viết CSS
-4. Có sử dụng Variable, Mixin, Extend, Import, Nested Rules​ để viết SCSS
+4. Có sử dụng Variable, Mixin, Extend, If Else, Import, Nested Rules​ để viết SCSS
 5. Có sử dụng Transition và Animation
 
 ## Project setup

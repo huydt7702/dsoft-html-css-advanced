@@ -48,7 +48,6 @@
   }
 }
 
-// Tablet
 @include Responsive($breakpoint-md) {
   .header {
     &__info {
@@ -83,7 +82,6 @@
   }
 }
 
-// Mobile
 @include Responsive($breakpoint-sm) {
   .sub-header {
     display: none;
